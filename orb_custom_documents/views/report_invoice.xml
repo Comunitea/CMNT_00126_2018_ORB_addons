@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+        <!-- Añade  Lotes -->
+        <xpath expr="//table[@name='invoice_line_table']/tbody/tr/td/span[@t-field='l.name']" position="after">
+                 <t t-set="lots" t-value="any([op.lot_id for op in l.move_line_ids.move_line_ids])"/>
+                 <t t-if="lots">
+                     <br/>Lote:
+                     <t t-foreach="l.move_line_ids.move_line_ids" t-as="move_line">
+                         <span t-field="move_line.lot_id.name"/>
+
+                     </t>
+                </t>
+         </xpath>
+
+    </template>
+</odoo>
