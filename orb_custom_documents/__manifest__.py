@@ -12,6 +12,7 @@
     'depends': [
         'base',
         'web',
+        'sale',
         'stock_picking_invoice_link',
     ],
     'data': [
