@@ -11,21 +11,20 @@
                         <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
                     </div> -->
                     <div class="col-xs-2 text-left">
-                          <img src="/orb_custom_documents/static/src/img/logo1.png" style="max-height: 70px;"/>
+                          <img src="/orb_custom_documents/static/src/img/logo1.png" style="max-height: 50px;"/>
                     </div>
                     <div class="col-xs-3 col-xs-offset-6 text-right">
-                        <img src="/orb_custom_documents/static/src/img/logo2.png" style="max-height: 70px;"/>
+                        <img src="/orb_custom_documents/static/src/img/logo2.png" style="max-height: 50px;"/>
                     </div>
                     <div class="col-xs-1 text-right">
-                        <img src="/orb_custom_documents/static/src/img/logo3.png" style="max-height: 70px;"/>
+                        <img src="/orb_custom_documents/static/src/img/logo3.png" style="max-height: 50px;"/>
                     </div>
                 </div>
-                <!-- Lo comento porque sino se monta el div de la dirección de ocmpañía con la de envío. -->
-<!--                 <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div t-if="company.logo or company.report_header" class="row zero_min_height">
                     <div class="col-xs-12">
                         <div style="border-bottom: 1px solid black;"/>
                     </div>
-                </div> -->
+                </div>
                 <div class="row">
                     <div class="col-xs-6" name="company_address">
                         <span t-field="company.partner_id"
