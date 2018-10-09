@@ -11,13 +11,13 @@
                         <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
                     </div> -->
                     <div class="col-xs-2 text-left">
-                          <img src="/orb_custom_documents/static/src/img/logo1.png" style="max-height: 50px;"/>
+                          <img src="/orb_custom_documents/static/src/img/logo1.png" style="max-height: 55px;"/>
                     </div>
                     <div class="col-xs-3 col-xs-offset-6 text-right">
-                        <img src="/orb_custom_documents/static/src/img/logo2.png" style="max-height: 50px;"/>
+                        <img src="/orb_custom_documents/static/src/img/logo2.png" style="max-height: 55px;"/>
                     </div>
                     <div class="col-xs-1 text-right">
-                        <img src="/orb_custom_documents/static/src/img/logo3.png" style="max-height: 50px;"/>
+                        <img src="/orb_custom_documents/static/src/img/logo3.png" style="max-height: 55px;"/>
                     </div>
                 </div>
                 <div t-if="company.logo or company.report_header" class="row zero_min_height">
