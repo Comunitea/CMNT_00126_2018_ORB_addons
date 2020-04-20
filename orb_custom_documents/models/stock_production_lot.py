@@ -37,8 +37,8 @@ class StockProductionLot(models.Model):
                 ean13_1 = ean13[:7]
                 ean13_2 = ean13[7:-1]
                 batch_type = '(10)'
-                # control = lot.force_control
-                # if not control:
-                control = self.get_control_digit(ean13)
+                control = lot.force_control
+                if not control:
+                    control = self.get_control_digit(ean13)
                 res = ' '.join([code_type, digit, ean13_1, ean13_2, control, batch_type, lot.name])
             lot.label_barcode = res
