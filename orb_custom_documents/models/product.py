@@ -5,8 +5,8 @@
 from odoo import api, fields, models
 
 
-class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+# class ProductTemplate(models.Model):
+#     _inherit = 'product.template'
 
-    label_qty = fields.Integer(string='Quantity box group', default=8)
-    label_uom = fields.Char(string='Label Uom', default='und')
+#     label_qty = fields.Integer(string='Quantity box group', default=8)
+#     label_uom = fields.Char(string='Label Uom', default='und')

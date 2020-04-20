@@ -32,20 +32,22 @@
         <div class="label-row">
             <div class="row">
                 <div class="col-xs-6 square1">
-                        <span>EAN:  </span><span style="margin-left: 3px" t-field="lot.label_barcode" />
+                        <span>EAN:  </span><span style="margin-left: 3px" t-field="lot.product_id.barcode"/>
                         <br/>
                         <span>LOTE:  </span><span style="margin-left: 3px" t-field="lot.name" />
                         <br/>
                         <span>FCP:  </span><span style="margin-left: 3px" t-field="lot.life_date" t-field-options='{"format": "MM/yyyy"}'/>
                         <br/>
-                        <span>CANTIDAD:  </span><span style="margin-left: 3px" t-field="lot.product_id.label_qty" /><span style="margin-left: 3px" t-field="lot.product_id.label_uom" />
+                        <span>CANTIDAD:  </span><span style="margin-left: 3px" t-esc="data['label_qty']" /><span style="margin-left: 3px" t-esc="data['label_uom']" />
                 </div>
                 <div class="col-xs-6 square2" style="text-align:right">
-                    <span style="font-size:8px">Orballo innovaciones forestales S.L RGSEAA 21.027836/C</span>
+                    <!-- <span style="font-size:8px">Orballo innovaciones forestales S.L RGSEAA 21.027836/C</span> -->
+                    <span style="font-size:8px"  t-esc="data['label_text']"/>
                     <br/>
-                    <span>ORBALLO INFUSION ECO</span>
+                    <!-- <span>ORBALLO INFUSION ECO</span>
                     <br/>
-                    <span>EL REMEDIO DE LA ABUELA</span>
+                    <span>EL REMEDIO DE LA ABUELA</span> -->
+                    <span style="margin-left: 3px" t-field="lot.product_id.name" />
                 </div>
             </div>
         </div>
@@ -99,6 +101,7 @@
             file="orb_custom_documents.box_label"
             print_report_name="'Etiqueta: %s' % (object.display_name)"
             paperformat="orb_custom_documents.paperformat_label_box"
+            menu="False"
     />
 
 
