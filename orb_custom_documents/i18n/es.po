@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-20 13:11+0000\n"
-"PO-Revision-Date: 2020-04-20 13:11+0000\n"
+"POT-Creation-Date: 2020-04-20 19:28+0000\n"
+"PO-Revision-Date: 2020-04-20 19:28+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -68,10 +68,6 @@ msgstr "Creado en"
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
-#. module: orb_custom_documents
-#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_force_control
-msgid "Force Control Digit"
-msgstr "Force Control Digit"
 
 #. module: orb_custom_documents
 #: model:ir.actions.report,name:orb_custom_documents.report_label_box
@@ -87,7 +83,12 @@ msgstr "ID (identificación)"
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_barcode
 msgid "Label Barcode"
-msgstr "Label Barcode"
+msgstr "Código de barras etiqueta"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_ean13
+msgid "Label EAN13"
+msgstr "EAN13 etiqueta"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_label_qty
@@ -137,19 +138,9 @@ msgid "Print group box label"
 msgstr "Imprimir etiqueta caja agrupación"
 
 #. module: orb_custom_documents
-#: model:ir.model,name:orb_custom_documents.model_product_template
-msgid "Product Template"
-msgstr "Plantilla de producto"
-
-#. module: orb_custom_documents
 #: model:ir.model,name:orb_custom_documents.model_box_label_wzd
 msgid "box.label.wzd"
 msgstr "box.label.wzd"
-
-#. module: orb_custom_documents
-#: model:ir.model,name:orb_custom_documents.model_report_box_label
-msgid "report.box_label"
-msgstr "report.box_label"
 
 #. module: orb_custom_documents
 #: model:ir.model,name:orb_custom_documents.model_report_orb_custom_documents_box_label
