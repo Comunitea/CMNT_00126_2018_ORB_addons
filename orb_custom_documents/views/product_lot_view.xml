@@ -9,6 +9,7 @@
         <field name="arch" type="xml">
             <field name="ref" position="after">
                 <field name="label_barcode"/>
+                <field name="force_control"/>
             </field>
         </field>
     </record>

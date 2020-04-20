@@ -8,7 +8,7 @@ from odoo import api, fields, models
 class BoxLabelWzd(models.TransientModel):
     _name = 'box.label.wzd'
 
-    label_qty = fields.Integer(string='Quantity box group', default=8)
+    label_qty = fields.Integer(string='Label Qty', default=8)
     label_uom = fields.Char(string='Label Uom', default='und')
     label_text = fields.Char(
         string='Label Text', 
