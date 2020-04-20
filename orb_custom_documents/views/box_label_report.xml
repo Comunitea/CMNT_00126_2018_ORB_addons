@@ -10,7 +10,7 @@
                 width: 130mm;
                 height: 70mm;
                 position: relative;
-                border: 1px solid black;
+                border: 0px solid black;
                 font-weight: bold;
                 padding: 2px;
             }

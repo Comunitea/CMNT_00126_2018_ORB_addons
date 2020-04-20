@@ -10,6 +10,7 @@
                 <group>
                     <field name="label_qty"/>
                     <field name="label_uom"/>
+                    <!-- <field name="digit_control"/> -->
                 </group>
                  <group colspan="4">
                     <field name="label_text"/>

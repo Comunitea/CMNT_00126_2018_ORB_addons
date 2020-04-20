@@ -88,9 +88,12 @@ msgstr "Texto etiqueta"
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_label_uom
 #: model:ir.model.fields,field_description:orb_custom_documents.field_product_product_label_uom
 #: model:ir.model.fields,field_description:orb_custom_documents.field_product_template_label_uom
-#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_barcode
 msgid "Label Uom"
 msgstr "Unidad etiqueta"
+
+#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_barcode
+msgid "Label Barcode"
+msgstr "Código de baras etiqueta"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd___last_update
