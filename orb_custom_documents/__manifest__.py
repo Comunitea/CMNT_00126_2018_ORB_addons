@@ -20,7 +20,6 @@
     'data': [
         'views/report_invoice.xml',
         'views/box_label_report.xml',
-        # 'views/product_view.xml',
         'views/product_lot_view.xml',
         'wizard/label_box_wzd.xml',
     ],
