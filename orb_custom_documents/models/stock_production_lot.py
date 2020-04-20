@@ -39,6 +39,7 @@ class StockProductionLot(models.Model):
         for lot in self:
             res = ''
             ean13 = ''
+            ean13_control = ''
             if lot.product_id.barcode and len(lot.product_id.barcode) == 14:
                 ean14 = lot.product_id.barcode
                 code_type = '(01)'
