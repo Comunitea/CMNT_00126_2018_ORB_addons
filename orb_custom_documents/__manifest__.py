@@ -13,10 +13,15 @@
         'base',
         'web',
         'sale',
+        'stock',
+        'product',
         'stock_picking_invoice_link',
     ],
     'data': [
         'views/report_invoice.xml',
+        'views/box_label_report.xml',
+        'views/product_view.xml',
+        'views/product_lot_view.xml',
     ],
     'installable': True,
 }

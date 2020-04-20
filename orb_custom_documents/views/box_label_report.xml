@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Etiquetas agrupación de caja  -->
+    <template id="document_box_label">
+        <style>
+
+            .label-container {
+                width: 130mm;
+                height: 70mm;
+                position: relative;
+                border: 1px solid black;
+                font-weight: bold;
+                padding: 2px;
+            }
+            .label-row {
+                height: 30%;
+                position: relative;
+            }
+            .label-row2 {
+                height: 70%;
+                position: relative;
+            }
+            .square1{
+                font-size: 12px;
+
+            }
+
+     </style>
+    <div class="label-container">
+        <div class="label-row">
+            <div class="row">
+                <div class="col-xs-6 square1">
+                        <span>EAN:  </span><span style="margin-left: 3px" t-field="lot.label_barcode" />
+                        <br/>
+                        <span>LOTE:  </span><span style="margin-left: 3px" t-field="lot.name" />
+                        <br/>
+                        <span>FCP:  </span><span style="margin-left: 3px" t-field="lot.life_date" t-field-options='{"format": "MM/yyyy"}'/>
+                        <br/>
+                        <span>CANTIDAD:  </span><span style="margin-left: 3px" t-field="lot.product_id.label_qty" /><span style="margin-left: 3px" t-field="lot.product_id.label_uom" />
+                </div>
+                <div class="col-xs-6 square2" style="text-align:right">
+                    <span style="font-size:8px">Orballo innovaciones forestales S.L RGSEAA 21.027836/C</span>
+                    <br/>
+                    <span>ORBALLO INFUSION ECO</span>
+                    <br/>
+                    <span>EL REMEDIO DE LA ABUELA</span>
+                </div>
+            </div>
+        </div>
+        <div class="label-row2">
+            <div class="row">
+                <div class="col-xs-12 square3">
+                    <img class="barcode"
+                        style="width:125mm;height:45mm"
+                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1'%('Code128', lot.label_barcode, 600, 200)" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </template>
+
+    <template id="box_label">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="lot">
+                <div class="page">
+                    <t t-call="orb_custom_documents.document_box_label">
+                        <t t-set="lot" t-value="lot"/>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_label_box" model="report.paperformat">
+            <field name="name">Group label box</field>
+
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">60</field>
+            <field name="page_width">110</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">1</field>
+            <field name="margin_left">1</field>
+            <field name="margin_right">1</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+       
+    <report id="report_label_box" 
+            model="stock.production.lot"
+            string="Group box label"
+            report_type="qweb-pdf"
+            name="orb_custom_documents.box_label"
+            file="orb_custom_documents.box_label"
+            print_report_name="'Etiqueta: %s' % (object.display_name)"
+            paperformat="orb_custom_documents.paperformat_label_box"
+    />
+
+
+</odoo>
