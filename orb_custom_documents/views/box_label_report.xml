@@ -10,7 +10,7 @@
                 width: 120mm;
                 height: 60mm;
                 position: relative;
-                border: 1px solid black;
+                border: 0px solid black;
                 font-weight: bold;
                 padding: 2px;
             }
@@ -38,26 +38,24 @@
                 text-align: center;
             }
             .my-barcode{
-                font-size: 30px;
+                font-size: 40px;
                 font-family: 'Libre Barcode 128';
-                font-stretch: 100%;
-                margin-top: 10px;
-                transform:scale(2,4); /* W3C */
-                -webkit-transform:scale(2,4); /* Safari and Chrome */
-                -moz-transform:scale(2,4); /* Firefox */
-                -ms-transform:scale(2,4); /* IE 9 */
-                -o-transform:scale(2,4); /* Opera */
+                
             }
             .square-text{
                 font-size: 20px;
                 text-align: center;
                 margin-top: 20px;
             }
+            .expand-y{
+                transform:scale(1,3); /* W3C */
+                -webkit-transform:scale(1,3); /* Safari and Chrome */
+            }
      </style>
     <div class="label-container">
         <div class="label-row">
             <div class="row">
-                <div class="col-xs-6 square1">
+                <div class="col-xs-4 square1">
                         <span>EAN:  </span><span style="margin-left: 3px" t-field="lot.product_id.barcode"/>
                         <br/>
                         <span>LOTE:  </span><span style="margin-left: 3px" t-field="lot.name" />
@@ -66,15 +64,16 @@
                         <br/>
                         <span>CANTIDAD:  </span><span style="margin-left: 3px" t-esc="data['label_qty']" /><span style="margin-left: 3px" t-esc="data['label_uom']" />
                 </div>
-                <div class="col-xs-6 square2" style="text-align:right">
-                    <span style="font-size:8px; padding-right: 3px"  t-esc="data['label_text']"/>
+                <div class="col-xs-8 square2" style="text-align:right">
+                    <span style="font-size:8px; padding-right: 2px"  t-esc="data['label_text']"/>
                     <br/>
-                    <span style="margin-left: 3px" t-field="lot.product_id.name" />
+                    <span style="padding-right: 2px" t-field="lot.product_id.name" />
                 </div>
             </div>
         </div>
         <div class="label-row2">
             <div class="row">
+                <!-- Asi con imagen no se ve bien en la imptresora Zebra/Toshiba, lo hacemos con la fuente de google Libre Barcode 128 la cual hay que instalar -->
                 <!-- <div class="col-xs-12" style="text-align:center">
                     <img class="barcode"
                         style="width:125mm;height:45mm"
@@ -83,15 +82,15 @@
                  <div class="col-xs-12">
                     <div class="square-barcode">
                         <div class="square-barcode-center">
-                            <span class="my-barcode" t-field="lot.label_barcode" />
-                            <br/>
-                            <span t-field="lot.label_barcode" />
-
+                            <p class="expand-y"><span class="my-barcode" t-field="lot.label_barcode" /></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-xs-12 square2" style="text-align:center">
+            <span t-field="lot.label_barcode" />
+        </div>      
     </div>
 
     </template>
