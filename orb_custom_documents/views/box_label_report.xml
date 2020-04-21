@@ -7,10 +7,10 @@
         <style>
 
             .label-container {
-                width: 130mm;
-                height: 70mm;
+                width: 120mm;
+                height: 60mm;
                 position: relative;
-                border: 0px solid black;
+                border: 1px solid black;
                 font-weight: bold;
                 padding: 2px;
             }
@@ -20,13 +20,39 @@
             }
             .label-row2 {
                 height: 70%;
+                border: 0px solid black;
                 position: relative;
             }
             .square1{
                 font-size: 12px;
 
             }
-
+            .square-barcode{
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+            .square-barcode-center{
+                display: table-cell;
+                vertical-align:middle;
+                text-align: center;
+            }
+            .my-barcode{
+                font-size: 30px;
+                font-family: 'Libre Barcode 128';
+                font-stretch: 100%;
+                margin-top: 10px;
+                transform:scale(2,4); /* W3C */
+                -webkit-transform:scale(2,4); /* Safari and Chrome */
+                -moz-transform:scale(2,4); /* Firefox */
+                -ms-transform:scale(2,4); /* IE 9 */
+                -o-transform:scale(2,4); /* Opera */
+            }
+            .square-text{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
      </style>
     <div class="label-container">
         <div class="label-row">
@@ -41,22 +67,28 @@
                         <span>CANTIDAD:  </span><span style="margin-left: 3px" t-esc="data['label_qty']" /><span style="margin-left: 3px" t-esc="data['label_uom']" />
                 </div>
                 <div class="col-xs-6 square2" style="text-align:right">
-                    <!-- <span style="font-size:8px">Orballo innovaciones forestales S.L RGSEAA 21.027836/C</span> -->
-                    <span style="font-size:8px"  t-esc="data['label_text']"/>
+                    <span style="font-size:8px; padding-right: 3px"  t-esc="data['label_text']"/>
                     <br/>
-                    <!-- <span>ORBALLO INFUSION ECO</span>
-                    <br/>
-                    <span>EL REMEDIO DE LA ABUELA</span> -->
                     <span style="margin-left: 3px" t-field="lot.product_id.name" />
                 </div>
             </div>
         </div>
         <div class="label-row2">
             <div class="row">
-                <div class="col-xs-12 square3">
+                <!-- <div class="col-xs-12" style="text-align:center">
                     <img class="barcode"
                         style="width:125mm;height:45mm"
                         t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1'%('Code128', lot.label_barcode, 600, 200)" />
+                </div> -->
+                 <div class="col-xs-12">
+                    <div class="square-barcode">
+                        <div class="square-barcode-center">
+                            <span class="my-barcode" t-field="lot.label_barcode" />
+                            <br/>
+                            <span t-field="lot.label_barcode" />
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +114,7 @@
             <field name="default" eval="True" />
             <field name="format">custom</field>
             <field name="page_height">60</field>
-            <field name="page_width">110</field>
+            <field name="page_width">100</field>
             <field name="orientation">Portrait</field>
             <field name="margin_top">1</field>
             <field name="margin_bottom">1</field>
