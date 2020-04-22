@@ -13,6 +13,9 @@ class BoxLabelWzd(models.TransientModel):
     label_text = fields.Char(
         string='Label Text', 
         default='Orballo innovaciones forestales S.L RGSEAA 21.027836/C')
+    print_type = fields.Selection(
+        [('custom_font', 'Font Type'), ('image', 'Image')],
+          string='Print type', default='custom_font')
 
      
     def print_label(self):
@@ -26,6 +29,7 @@ class BoxLabelWzd(models.TransientModel):
             'label_uom': self.label_uom,
             'label_text': self.label_text,
             'lot_id': docs.id,
+            'print_type': self.print_type
         }
         # Esto devolverá el report pasando por el parser
         return {

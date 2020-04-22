@@ -69,12 +69,12 @@
         <div class="label-row2">
             <div class="row">
                 <!-- Asi con imagen no se ve bien en la imptresora Zebra/Toshiba, lo hacemos con la fuente de google Libre Barcode 128 la cual hay que instalar -->
-                <div class="col-xs-12" style="text-align:center">
-                    <!-- <img class="barcode"
+                <div t-if="data['print_type']=='image'" class="col-xs-12" style="text-align:center">
+                    <img class="barcode"
                         style="width:115mm;height:45mm"
-                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0'%('Code128', lot.label_barcode, 600, 300)" /> -->
+                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0'%('Code128', lot.label_barcode, 600, 300)" />
                 </div>
-                 <div class="col-xs-12">
+                 <div t-if="data['print_type']=='custom_font'" class="col-xs-12">
                     <div class="square-barcode">
                         <div class="square-barcode-center">
                             <p class="expand-y"><span class="my-barcode" t-field="lot.label_barcode_font" /></p>
