@@ -13,7 +13,6 @@
                 padding: 2px;
             }
             .label-row {
-                font-weight: bold;
                 height: 30%;
                 position: relative;
             }
@@ -38,8 +37,8 @@
                 text-align: center;
             }
             .my-barcode{
-                font-size: 40px;
-                font-family: 'Libre Barcode 128';
+                font-size: 55px;
+                font-family: 'Code 128';
                 
             }
             .expand-y{
