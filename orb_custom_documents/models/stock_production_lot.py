@@ -75,22 +75,18 @@ class StockProductionLot(models.Model):
             Coded for https://stackoverflow.com/q/52710760/5987
         '''
         s = s.encode('ascii').decode('ascii')
-        print ("--------------------\n>>>>Evaluando: {}".format(s))
         if s.isdigit() and len(s) % 2 == 0:
-            print ('Code C')
             # use Code 128C, pairs of digits
             codes = [105]
             for i in range(0, len(s), 2):
                 codes.append(int(s[i:i+2], 10))
         else:
             # use Code 128B and shift for Code 128A
-            print ('Code B')
             mapping = dict((chr(c), [98, c + 64] if c < 32 else [c - 32]) for c in range(128))
             codes = [104]
             for c in s:
                 codes.extend(mapping[c])
         check_digit = (codes[0] + sum(i * x for i,x in enumerate(codes))) % 103
-        print ("--------------------\n>>>>>>>>>>>:Checksum {}".format(check_digit))   
         return check_digit
         # codes.append(check_digit)
         # codes.append(106) # stop code
