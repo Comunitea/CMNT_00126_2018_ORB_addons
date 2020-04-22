@@ -9,6 +9,8 @@ class StockProductionLot(models.Model):
     _inherit = 'stock.production.lot'
 
     label_barcode = fields.Char(string='Label Barcode', compute='_get_barcode')
+    label_barcode_font = fields.Char(string='Label Barcode Font', compute='_get_barcode')
+    label_barcode_text = fields.Char(string='Label Barcode', compute='_get_barcode')
     label_ean13 = fields.Char(string='Label EAN13', compute='_get_barcode')
 
     @api.model
@@ -51,5 +53,39 @@ class StockProductionLot(models.Model):
                 ean13_control = self.get_control_digit(ean13)
                 batch_type = '(10)'
                 res = ' '.join([code_type, digit, ean13_1, ean13_2, control, batch_type, lot.name])
-            lot.label_barcode = res
+            
+            code128 = res.replace(' ', '').replace('(', '').replace(')', '')
+            lot.label_barcode = code128
+            lot.label_barcode_text = res
             lot.label_ean13 = ean13 + ean13_control
+            lot.label_barcode_font = 'È01184365539813711002712FËÍ'
+            # lot.label_barcode_font = self.encode128(lot.label_barcode)
+
+
+    def encode128(self, s):
+        ''' Code 128 conversion for a font as described at
+            https://en.wikipedia.org/wiki/Code_128 and downloaded
+            from http://www.barcodelink.net/barcode-font.php
+            Only encodes ASCII characters, does not take advantage of
+            FNC4 for bytes with the upper bit set.
+            It does not attempt to optimize the length of the string,
+            Code B is the default to prefer lower case over control characters.
+            Coded for https://stackoverflow.com/q/52710760/5987
+        '''
+        s = s.encode('ascii').decode('ascii')
+        if s.isdigit() and len(s) % 2 == 0:
+            # use Code 128C, pairs of digits
+            codes = [105]
+            for i in range(0, len(s), 2):
+                codes.append(int(s[i:i+2], 10))
+        else:
+            # use Code 128B and shift for Code 128A
+            mapping = dict((chr(c), [98, c + 64] if c < 32 else [c - 32]) for c in range(128))
+            codes = [104]
+            for c in s:
+                codes.extend(mapping[c])
+        check_digit = (codes[0] + sum(i * x for i,x in enumerate(codes))) % 103
+        codes.append(check_digit)
+        codes.append(106) # stop code
+        chars = (b'\xd4' + bytes(range(33,126+1)) + bytes(range(200,211+1))).decode('latin-1')
+        return ''.join(chars[x] for x in codes)

@@ -9,7 +9,9 @@
         <field name="arch" type="xml">
             <field name="ref" position="after">
                 <field name="label_ean13"/>
+                <field name="label_barcode_text"/>
                 <field name="label_barcode"/>
+                <field name="label_barcode_font"/>
             </field>
         </field>
     </record>

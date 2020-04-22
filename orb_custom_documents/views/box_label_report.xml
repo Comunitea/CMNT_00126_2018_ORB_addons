@@ -5,16 +5,15 @@
     <!-- Etiquetas agrupación de caja  -->
     <template id="document_box_label">
         <style>
-
             .label-container {
                 width: 120mm;
-                height: 60mm;
+                height: 70mm;
                 position: relative;
                 border: 0px solid black;
-                font-weight: bold;
                 padding: 2px;
             }
             .label-row {
+                font-weight: bold;
                 height: 30%;
                 position: relative;
             }
@@ -22,6 +21,7 @@
                 height: 70%;
                 border: 0px solid black;
                 position: relative;
+                padding-top: 4px;
             }
             .square1{
                 font-size: 12px;
@@ -41,11 +41,6 @@
                 font-size: 40px;
                 font-family: 'Libre Barcode 128';
                 
-            }
-            .square-text{
-                font-size: 20px;
-                text-align: center;
-                margin-top: 20px;
             }
             .expand-y{
                 transform:scale(1,3); /* W3C */
@@ -74,22 +69,22 @@
         <div class="label-row2">
             <div class="row">
                 <!-- Asi con imagen no se ve bien en la imptresora Zebra/Toshiba, lo hacemos con la fuente de google Libre Barcode 128 la cual hay que instalar -->
-                <!-- <div class="col-xs-12" style="text-align:center">
-                    <img class="barcode"
-                        style="width:125mm;height:45mm"
-                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1'%('Code128', lot.label_barcode, 600, 200)" />
-                </div> -->
+                <div class="col-xs-12" style="text-align:center">
+                    <!-- <img class="barcode"
+                        style="width:115mm;height:45mm"
+                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0'%('Code128', lot.label_barcode, 600, 300)" /> -->
+                </div>
                  <div class="col-xs-12">
                     <div class="square-barcode">
                         <div class="square-barcode-center">
-                            <p class="expand-y"><span class="my-barcode" t-field="lot.label_barcode" /></p>
+                            <p class="expand-y"><span class="my-barcode" t-field="lot.label_barcode_font" /></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xs-12 square2" style="text-align:center">
-            <span t-field="lot.label_barcode" />
+            <span t-field="lot.label_barcode_text" />
         </div>      
     </div>
 
