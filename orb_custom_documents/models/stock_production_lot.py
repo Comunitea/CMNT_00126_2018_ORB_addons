@@ -60,8 +60,8 @@ class StockProductionLot(models.Model):
             lot.label_ean13 = ean13 + ean13_control
             cssum = self.encode128(lot.label_barcode)
             cssum2 = self.encode128(lot.label_barcode)
-            # lot.label_barcode_font = 'Ì' + code128 + chr(cssum2) + 'Î'
-            lot.label_barcode_font = 'Ê!2KaUÃ-g*"g4tËÍ'
+            lot.label_barcode_font = 'Ì' + code128 + chr(cssum2) + 'Î'
+            # lot.label_barcode_font = 'Ê!2KaUÃ-g*"g4tËÍ'
 
 
     def encode128(self, s):
