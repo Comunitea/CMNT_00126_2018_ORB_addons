@@ -13,6 +13,7 @@
                 padding: 2px;
             }
             .label-row {
+                font-weight: bold;
                 height: 30%;
                 position: relative;
             }
