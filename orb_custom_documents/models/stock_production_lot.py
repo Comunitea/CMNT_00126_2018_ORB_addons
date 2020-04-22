@@ -75,6 +75,7 @@ class StockProductionLot(models.Model):
             Coded for https://stackoverflow.com/q/52710760/5987
         '''
         s = s.encode('ascii').decode('ascii')
+        print ("--------------------\n>>>>Evaluando: {}".format(s))
         if s.isdigit() and len(s) % 2 == 0:
             print ('Code C')
             # use Code 128C, pairs of digits
@@ -89,6 +90,7 @@ class StockProductionLot(models.Model):
             for c in s:
                 codes.extend(mapping[c])
         check_digit = (codes[0] + sum(i * x for i,x in enumerate(codes))) % 103
+        print ("--------------------\n>>>>>>>>>>>:Checksum {}".format(check_digit))   
         return check_digit
         # codes.append(check_digit)
         # codes.append(106) # stop code
