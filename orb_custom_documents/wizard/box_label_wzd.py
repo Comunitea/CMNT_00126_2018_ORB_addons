@@ -22,7 +22,6 @@ class BoxLabelWzd(models.TransientModel):
         self.ensure_one()
         model = self.env.context.get('active_model')
         docs = self.env[model].browse(self.env.context.get('active_id'))
-        docs._get_barcode()
         self.ensure_one()
         report_name = 'orb_custom_documents.box_label'
         data_dic = {
