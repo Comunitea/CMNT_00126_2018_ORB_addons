@@ -67,9 +67,9 @@
                         <span>CANTIDAD:  </span><span style="margin-left: 3px" t-esc="data['label_qty']" /><span style="margin-left: 3px" t-esc="data['label_uom']" />
                 </div>
                 <div class="col-xs-8 square2" style="text-align:right">
-                    <span style="padding-right: 2px"  t-esc="data['label_text']"/>
+                    <span style="font-size:12px; padding-right: 0px"  t-esc="data['label_text']"/>
                     <br/>
-                    <span style="padding-right: 2px" t-field="lot.product_id.name" />
+                    <span style="padding-right: 2px" t-esc="lot.product_id.name" />
                 </div>
             </div>
         </div>
