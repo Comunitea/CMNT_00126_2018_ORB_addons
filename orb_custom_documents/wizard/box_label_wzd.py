@@ -12,7 +12,7 @@ class BoxLabelWzd(models.TransientModel):
     label_uom = fields.Char(string='Label Uom', default='und')
     label_text = fields.Char(
         string='Label Text', 
-        default='Orballo innovaciones forestales S.L RGSEAA 21.027836/C')
+        default='ORBALLO INNOVACIONES FORESTALES')
     print_type = fields.Selection(
         [('custom_font', 'Font Type'), ('image', 'Image')],
           string='Print type', default='custom_font')
