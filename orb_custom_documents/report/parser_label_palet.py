@@ -5,13 +5,13 @@
 from odoo import api, models
 
 
-class ParserBoxLabelReport(models.AbstractModel):
-    _name = "report.orb_custom_documents.box_label"
+class ParserPaletLabelReport(models.AbstractModel):
+    _name = "report.orb_custom_documents.palet_label"
 
     @api.model
     def get_report_values(self, docids, data=None):
-        model = 'stock.production.lot'
-        docs = self.env[model].browse(data['lot_id'])
+        model = data['model']
+        docs = self.env[model].browse(data['wzd_id'])
         return {
             'doc_ids': self.ids,
             'doc_model': model,

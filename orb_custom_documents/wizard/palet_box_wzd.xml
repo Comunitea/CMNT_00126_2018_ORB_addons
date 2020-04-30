@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_palet_label_wzd_form" model="ir.ui.view">
+        <field name="name">view_palet_label_wzd_form</field>
+        <field name="model">palet.label.wzd</field>
+        <field name="arch" type="xml">
+            <form string="Print palet labels">
+                <group>
+                    <field name="company_text"/>
+                    <field name="partner_id"/>
+                </group>
+
+                 <group string="Label lines">
+                    <field name="line_ids" colspan="4" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="lot_id"/>
+                            <field name="name1"/>
+                            <field name="name2"/>
+                            <field name="ean13"/>
+                            <field name="life_date"/>
+                            <field name="qty_box"/>
+                            <field name="qty_ud"/>
+                            <field name="barcode_text"/>
+                        </tree>
+                    </field>
+                </group>
+
+                <footer>
+                    <button name="print_label" type="object" class="btn-primary" string="Print Label"/>
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer> 
+            </form>
+        </field>
+    </record>
+
+   
+    <act_window id="palet_label_print_action"
+                name="Print palet labels"
+                src_model="stock.picking"
+                res_model="palet.label.wzd"
+                view_mode="form"
+                view_type="form"
+                target="current" />
+</odoo>

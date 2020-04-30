@@ -20,8 +20,10 @@
     'data': [
         'views/report_invoice.xml',
         'views/box_label_report.xml',
+        'views/palet_label_report.xml',
         'views/product_lot_view.xml',
         'wizard/label_box_wzd.xml',
+        'wizard/palet_box_wzd.xml',
     ],
     'installable': True,
 }
