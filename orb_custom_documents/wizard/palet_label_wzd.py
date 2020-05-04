@@ -79,9 +79,7 @@ class LinePaletLabelWzd(models.TransientModel):
             if not line.lot_id or not line.ean13:
                 continue
             code_type = '(01)'
-            ean13 = line.ean13
-            # digit =  self.env['stock.production.lot'].get_control_digit(ean13)
-            digit =  '8'
+            ean14 = line.lot_id.label_palet_ean14
             qty_type = '(30)'
             qty = str(line.qty_box).zfill(4)
             date_type = '(15)'
@@ -89,6 +87,6 @@ class LinePaletLabelWzd(models.TransientModel):
             date = date_split[2] + date_split[1] + date_split[0]
             batch_type = '(10)'
             lot_name = line.lot_id.name
-            label_text = ''.join([code_type, ean13, digit, qty_type, qty, date_type, date, batch_type, lot_name])
+            label_text = ''.join([code_type, ean14, qty_type, qty, date_type, date, batch_type, lot_name])
             line.barcode_text = label_text
             line.barcode = line.barcode_text.replace(' ', '').replace('(', '').replace(')', '')

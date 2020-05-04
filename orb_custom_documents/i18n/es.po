@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 19:57+0000\n"
-"PO-Revision-Date: 2020-04-22 19:57+0000\n"
+"POT-Creation-Date: 2020-05-04 10:01+0000\n"
+"PO-Revision-Date: 2020-05-04 10:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,25 +48,93 @@ msgid "<span>EAN:  </span>"
 msgstr "<span>EAN:  </span>"
 
 #. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "<span>FECHA DE CONSUMO PREFERENTE: </span>"
+msgstr "<span>FECHA DE CONSUMO PREFERENTE: </span>"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "<span>LOTE: </span>"
+msgstr "<span>LOTE: </span>"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "<strong><span>PALET: </span></strong>"
+msgstr "<strong><span>PALET: </span></strong>"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_barcode_text
+msgid "Barcode Text"
+msgstr "Texto código de barras"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_qty_box
+msgid "Box grouped"
+msgstr "Cajas agrupación"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "CAJAS AGRUPACIÓN"
+msgstr "CAJAS AGRUPACIÓN"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "CANTIDAD:"
+msgstr "CANTIDAD:"
+
+#. module: orb_custom_documents
 #: model:ir.ui.view,arch_db:orb_custom_documents.view_box_label_wzd_form
+#: model:ir.ui.view,arch_db:orb_custom_documents.view_palet_label_wzd_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_company_text
+msgid "Company Text"
+msgstr "Texto compañía"
+
+#. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_create_uid
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_create_uid
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_create_date
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_create_date
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_create_date
 msgid "Created on"
 msgstr "Creado en"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_display_name
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_display_name
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_display_name
 #: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_box_label_display_name
+#: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_palet_label_display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "EAN:"
+msgstr "EAN:"
+
+#. module: orb_custom_documents
+#: model:ir.ui.view,arch_db:orb_custom_documents.document_palet_label
+msgid "ESTUCHES INDIVIDUALES"
+msgstr "ESTUCHES INDIVIDUALES"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_ean13
+msgid "Ean 13"
+msgstr "Ean 13"
 
 #. module: orb_custom_documents
 #: selection:box.label.wzd,print_type:0
@@ -80,7 +148,10 @@ msgstr "Etiqueta caja agrupación"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_id
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_id
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_id
 #: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_box_label_id
+#: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_palet_label_id
 msgid "ID"
 msgstr "ID (identificación)"
 
@@ -88,6 +159,11 @@ msgstr "ID (identificación)"
 #: selection:box.label.wzd,print_type:0
 msgid "Image"
 msgstr "Imagen"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_qty_ud
+msgid "Individual bulk"
+msgstr "Estuches individuales"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_barcode
@@ -101,9 +177,19 @@ msgid "Label Barcode Font"
 msgstr "Código barras fuente texto"
 
 #. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_box_ean14
+msgid "Label Box EAN14"
+msgstr "Etiqueta caja EAN14"
+
+#. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_ean13
 msgid "Label EAN13"
 msgstr "EAN13 etiqueta"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_stock_production_lot_label_palet_ean14
+msgid "Label Pack EAN14"
+msgstr "Etiqueta palet EAN14"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_label_qty
@@ -121,20 +207,43 @@ msgid "Label Uom"
 msgstr "Unidad etiqueta"
 
 #. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_line_ids
+#: model:ir.ui.view,arch_db:orb_custom_documents.view_palet_label_wzd_form
+msgid "Label lines"
+msgstr "Líneas etiquetas"
+
+#. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd___last_update
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd___last_update
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd___last_update
 #: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_box_label___last_update
+#: model:ir.model.fields,field_description:orb_custom_documents.field_report_orb_custom_documents_palet_label___last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_write_uid
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_write_uid
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_write_date
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_write_date
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_life_date
+msgid "Life date"
+msgstr "Fecha consumo preferente"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_lot_id
+msgid "Lot"
+msgstr "Lote"
 
 #. module: orb_custom_documents
 #: model:ir.model,name:orb_custom_documents.model_stock_production_lot
@@ -142,7 +251,28 @@ msgid "Lot/Serial"
 msgstr "Lote/Número de serie"
 
 #. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_name1
+msgid "Name 1"
+msgstr "Nombre 1"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_name2
+msgid "Name 2"
+msgstr "Nombre 2"
+
+#. module: orb_custom_documents
+#: model:ir.actions.report,name:orb_custom_documents.report_label_palet
+msgid "Palet label"
+msgstr "Rtiqueta palet"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: orb_custom_documents
 #: model:ir.ui.view,arch_db:orb_custom_documents.view_box_label_wzd_form
+#: model:ir.ui.view,arch_db:orb_custom_documents.view_palet_label_wzd_form
 msgid "Print Label"
 msgstr "Imprimir etiqueta"
 
@@ -153,9 +283,25 @@ msgid "Print group box label"
 msgstr "Imprimir etiqueta caja agrupación"
 
 #. module: orb_custom_documents
+#: model:ir.actions.act_window,name:orb_custom_documents.palet_label_print_action
+#: model:ir.ui.view,arch_db:orb_custom_documents.view_palet_label_wzd_form
+msgid "Print palet labels"
+msgstr "Imprimir etiquetas palet"
+
+#. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_box_label_wzd_print_type
 msgid "Print type"
 msgstr "Tipo impresión"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: orb_custom_documents
+#: model:ir.model.fields,field_description:orb_custom_documents.field_line_palet_label_wzd_wzd_id
+msgid "Wizard"
+msgstr "Asistente"
 
 #. module: orb_custom_documents
 #: model:ir.model,name:orb_custom_documents.model_box_label_wzd
@@ -163,7 +309,27 @@ msgid "box.label.wzd"
 msgstr "box.label.wzd"
 
 #. module: orb_custom_documents
+#: model:ir.model,name:orb_custom_documents.model_line_palet_label_wzd
+msgid "line.palet.label.wzd"
+msgstr "line.palet.label.wzd"
+
+#. module: orb_custom_documents
+#: model:ir.model,name:orb_custom_documents.model_palet_label_wzd
+msgid "palet.label.wzd"
+msgstr "palet.label.wzd"
+
+#. module: orb_custom_documents
 #: model:ir.model,name:orb_custom_documents.model_report_orb_custom_documents_box_label
 msgid "report.orb_custom_documents.box_label"
 msgstr "report.orb_custom_documents.box_label"
+
+#. module: orb_custom_documents
+#: model:ir.model,name:orb_custom_documents.model_report_orb_custom_documents_document_palet_label
+msgid "report.orb_custom_documents.document_palet_label"
+msgstr "report.orb_custom_documents.document_palet_label"
+
+#. module: orb_custom_documents
+#: model:ir.model,name:orb_custom_documents.model_report_orb_custom_documents_palet_label
+msgid "report.orb_custom_documents.palet_label"
+msgstr "report.orb_custom_documents.palet_label"
 

@@ -127,11 +127,11 @@
                     </div>
                 </div>
 
-                <div class="row my-row">
+                <!-- <div class="row my-row">
                     <div class="col-xs-12" style="font-size: 3.2rem !important;">
                         <strong><span>DESTINO: </span></strong><span t-field="wzd.partner_id.street"/>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row my-row center-div">
                     <div class="center-this-middle" style="font-size: 3.2rem !important;">

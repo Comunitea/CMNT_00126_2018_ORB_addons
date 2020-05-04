@@ -12,6 +12,8 @@
                 <field name="label_barcode_text"/>
                 <field name="label_barcode"/>
                 <field name="label_barcode_font"/>
+                <field name="label_box_ean14"/>
+                <field name="label_palet_ean14"/>
             </field>
         </field>
     </record>
