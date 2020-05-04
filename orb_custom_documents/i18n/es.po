@@ -263,7 +263,7 @@ msgstr "Nombre 2"
 #. module: orb_custom_documents
 #: model:ir.actions.report,name:orb_custom_documents.report_label_palet
 msgid "Palet label"
-msgstr "Rtiqueta palet"
+msgstr "Etiqueta palet"
 
 #. module: orb_custom_documents
 #: model:ir.model.fields,field_description:orb_custom_documents.field_palet_label_wzd_partner_id

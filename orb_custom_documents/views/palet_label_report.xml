@@ -11,13 +11,13 @@
                 font-size: 1.5rem;
             }
             .section1 {
-                height: 20%;
+                height: 10%;
                 border-bottom: 2px solid black;
             }
             .section2 {
                 height: 10%;
                 border-bottom: 2px solid black;
-                text-align: right;
+                text-align: center;
                 font-size: 3.7rem;
             }
             .section3 {
@@ -31,7 +31,7 @@
                 border-bottom: 2px solid black;
             }
             .section5 {
-                height: 35%;
+                height: 45%;
             }
             .my-row{
                 padding-left: 4rem;
@@ -133,11 +133,11 @@
                     </div>
                 </div> -->
 
-                <div class="row my-row center-div">
+                <!-- <div class="row my-row center-div">
                     <div class="center-this-middle" style="font-size: 3.2rem !important;">
                         <strong><span>PALET: </span></strong><span t-esc="count"/><span t-esc="'  '"/> / <span t-esc="'  '"/> <span t-esc="count_total"/>
                     </div>
-                </div>
+                </div> -->
                 
             </div>
         </div>                   
