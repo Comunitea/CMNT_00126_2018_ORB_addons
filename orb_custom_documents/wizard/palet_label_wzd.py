@@ -51,6 +51,7 @@ class LinePaletLabelWzd(models.TransientModel):
     wzd_id = fields.Many2one('palet.label.wzd', 'Wizard')
     sequence = fields.Integer('Sequence')
     lot_id = fields.Many2one('stock.production.lot', 'Lot')
+    use_ean14_box = fields.Boolean('Usar ean14 caja')
     life_date = fields.Date('Life date')
     name1 = fields.Char('Name 1')
     name2 = fields.Char('Name 2')
@@ -73,13 +74,16 @@ class LinePaletLabelWzd(models.TransientModel):
             # self.name2 = 'PEQUEÑO DORMILÓN'
             self.life_date =  lot.life_date
 
-    @api.depends('lot_id', 'ean13')
+    @api.depends('lot_id', 'ean13', 'use_ean14_box')
     def _get_barcode(self):
         for line in self:
             if not line.lot_id or not line.ean13:
                 continue
             code_type = '(01)'
             ean14 = line.lot_id.label_palet_ean14
+            if self.use_ean14_box:
+                ean14 = line.lot_id.label_box_ean14
+
             qty_type = '(30)'
             qty = str(line.qty_box).zfill(4)
             date_type = '(15)'

@@ -20,6 +20,7 @@
                             <field name="name1"/>
                             <field name="name2"/>
                             <field name="ean13"/>
+                            <field name="use_ean14_box"/>
                             <field name="life_date"/>
                             <field name="qty_box"/>
                             <field name="qty_ud"/>
