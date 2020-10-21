@@ -91,14 +91,16 @@ class StockProductionLot(models.Model):
                 # Manera no codificada A de calcularlo, cogiendo solo el dñigito de
                 # control y añadiendolo al final, poner los char de init y fin
                 # Así parece que no lo lee bien
-                csum = self.get128digit(lot.label_barcode)
-                lot.label_barcode_font = 'Ì' + code128 + chr(csum) + 'Î'
+                # csum = self.get128digit(lot.label_barcode)
+                # lot.label_barcode_font = 'Ì' + code128 + chr(csum) + 'Î'
                 # lot.label_barcode_font = "Ì01184365539813711002712GÎ"
 
                 # Manera codificada B de calcularlo, pero la funcion encode128 no
                 # devuelve bien los caracteres de inicio y final así que los susyituyo
-                encode_128_base = self.encode128(lot.label_barcode)
-                encode_128 = 'Ì' + encode_128_base [1:-1] + 'Î'
+                # Algun lote, como el 03433 devuelve el caracter ô que no lo reconoce
+                # le hago un replace
+                encode_128_base = self.encode128(lot.label_barcode).replace('Ô', ' ')
+                encode_128 = 'Ì' + encode_128_base[1:-1] + 'Î'
                 lot.label_barcode_font = encode_128
         
            
