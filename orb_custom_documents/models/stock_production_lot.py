@@ -10,7 +10,6 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     def write(self, vals):
-        import pdb; pdb.set_trace()
         res = super().write(vals)
         return res
 
